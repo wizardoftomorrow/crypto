@@ -5,6 +5,7 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import TimeSeriesSplit
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
+from get_collected_data import get_coin_data_all
 import matplotlib.pyplot as plt
 import pickle
 import time
@@ -127,8 +128,10 @@ class CryptoClassifier():
 
 
 if __name__ == '__main__':
-    from get_collected_data import get_coin_data_all
     data = get_coin_data_all('USDT-ETH')
+    # INFO: another approach would be to read data from csv
+    # data = pd.read_csv('data\eth.csv')
+
     data.plot(x='time')
     plt.show()
     clf = CryptoClassifier(data, train=True)
