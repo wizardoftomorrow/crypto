@@ -50,13 +50,13 @@ def get_coin_data_all(market):
 if __name__ == '__main__':
     # collect coins with usdt base
     df = get_market_data_containing('USDT')
-    df.to_csv('x_usdt_coins.csv', index=False)
+    df.to_csv('data/x_usdt_coins.csv', index=False)
 
     # collect btc and eth, both to usdt
     df_btc_eth = get_market_data_by_list(['USDT-BTC', 'USDT-ETH'])
-    df_btc_eth.to_csv('btc_eth.csv', index=False)
+    df_btc_eth.to_csv('data/btc_eth.csv', index=False)
 
     # collect eth
-    df_eth = get_coin_data_all('USDT-ETC')
-    df_eth.to_csv('eth.csv', index=False)
+    df_eth = get_coin_data_all('USDT-ETH')
+    df_eth.to_csv('data/eth.csv', index=False)
 
